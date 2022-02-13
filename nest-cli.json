@@ -1,4 +1,48 @@
 {
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src"
+  "sourceRoot": "apps/health-check/src",
+  "monorepo": true,
+  "root": "apps/health-check",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/health-check/tsconfig.app.json"
+  },
+  "projects": {
+    "health-check": {
+      "type": "application",
+      "root": "apps/health-check",
+      "entryFile": "main",
+      "sourceRoot": "apps/health-check/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/health-check/tsconfig.app.json"
+      }
+    },
+    "test-1": {
+      "type": "application",
+      "root": "apps/test-1",
+      "entryFile": "main",
+      "sourceRoot": "apps/test-1/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/test-1/tsconfig.app.json"
+      }
+    },
+    "test-2": {
+      "type": "application",
+      "root": "apps/test-2",
+      "entryFile": "main",
+      "sourceRoot": "apps/test-2/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/test-2/tsconfig.app.json"
+      }
+    },
+    "test-3": {
+      "type": "application",
+      "root": "apps/test-3",
+      "entryFile": "main",
+      "sourceRoot": "apps/test-3/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/test-3/tsconfig.app.json"
+      }
+    }
+  }
 }

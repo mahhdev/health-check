@@ -183,6 +183,12 @@ export class AppService {
       return
     } catch (err) { console.log('Error no job Monitor test3', err) }
   }
+
+  async allLogs(servico: string): Promise<any> {
+    return new Promise(async (resolve) => {
+      resolve(await this.AppCollection.find({"servico": servico}))
+    })
+  }
 }
 
 
